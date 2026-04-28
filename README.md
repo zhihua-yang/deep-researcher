@@ -85,10 +85,10 @@ deep-researcher needs a web search tool. In WorkBuddy this is built-in and works
 
 | Provider | Recommended for | Free tier | China accessible | Get key |
 |----------|----------------|-----------|-----------------|---------|
-| **Serper** ⭐ | General research — real Google results | 2,500/month | ✅ (needs VPN) | [serper.dev](https://serper.dev) → `SERPER_API_KEY` |
-| **Tavily** | Deep research — AI-optimized results | 1,000/month | ✅ (needs VPN) | [tavily.com](https://tavily.com) → `TAVILY_API_KEY` |
-| **Brave Search** | Privacy-first, no Google dependency | 2,000/month | ✅ (needs VPN) | [brave.com/search/api](https://brave.com/search/api/) → `BRAVE_API_KEY` |
-| **Gemini** | No credit card needed | 500 req/day | ✅ (needs VPN) | [aistudio.google.com](https://aistudio.google.com/apikey) → `GEMINI_API_KEY` |
+| **Serper** ⭐ | General research — real Google results | 2,500/month | ⚠️ API calls via Google infra | [serper.dev](https://serper.dev) → `SERPER_API_KEY` |
+| **Tavily** | Deep research — AI-optimized results | 1,000/month | ⚠️ needs VPN | [tavily.com](https://tavily.com) → `TAVILY_API_KEY` |
+| **Brave Search** | Privacy-first, no Google dependency | 2,000/month | ⚠️ needs VPN | [brave.com/search/api](https://brave.com/search/api/) → `BRAVE_API_KEY` |
+| **Gemini** | No credit card needed | 500 req/day | ⚠️ needs VPN | [aistudio.google.com](https://aistudio.google.com/apikey) → `GEMINI_API_KEY` |
 | **Kimi / Moonshot** | China mainland, no VPN | Paid, Alipay | ✅ direct | [platform.moonshot.cn](https://platform.moonshot.cn) → `KIMI_API_KEY` |
 
 **Serper** is the recommended default — it returns real Google search results, which gives deep-researcher the best coverage for local-language searches across all regions.
@@ -128,4 +128,4 @@ The report is written in the same language as your query. Research is conducted 
 
 ## License
 
-MIT
+Apache 2.0
