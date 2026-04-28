@@ -1,7 +1,7 @@
 ---
 name: deep-researcher
-version: 1.0.0
-description: Domain Research Report Generator — runs multi-angle deep research on any topic and produces a structured, decision-ready report with evidence-scored consensus, divergences, key numbers, failed paths, and decision readiness.
+version: 1.0.1
+description: Domain Research Report Generator — runs multi-angle deep research on any topic and produces a structured, decision-ready report with evidence-scored consensus, divergences, key numbers, failed paths, and decision readiness. 深度调研报告生成器，自动研究任意领域并输出结构化决策报告，包含共识、分歧、关键数字、失败路径和决策准备度分析。
 author: zhihua-yang
 allowed-tools:
   - WebSearch
