@@ -1,0 +1,15 @@
+# Local research outputs (generated, not part of the skill)
+context/
+
+# Test inputs and test reports
+test-inputs/
+
+# WorkBuddy local memory
+.workbuddy/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
