@@ -59,7 +59,7 @@ To fix this, install one of the following (pick any one):
 
 | Option | Setup | Free tier | Best for |
 |--------|-------|-----------|---------|
-| **Serper** (Google results) | Get key at serper.dev → `SERPER_API_KEY=xxx` | 2,500 searches/month | General research |
+| **Serper** ⭐ (recommended) | Get key at serper.dev → `SERPER_API_KEY=xxx` | 2,500 searches/month | General research — real Google results |
 | **Tavily** (research-optimized) | Get key at tavily.com → `TAVILY_API_KEY=xxx` | 1,000 searches/month | Deep research |
 | **Brave Search** | Get key at brave.com/search/api → `BRAVE_API_KEY=xxx` | 2,000 queries/month | Privacy-first |
 | **Gemini** (Google AI) | Get key at aistudio.google.com → `GEMINI_API_KEY=xxx` | 500 req/day, no card needed | No credit card |
