@@ -56,7 +56,16 @@ cp -R SKILL.md references/ strategies/ templates/ ~/.your-agent/skills/deep-rese
 
 ## Usage
 
-Just describe what you want in natural language — no flags or commands:
+Just describe what you want — the skill is triggered automatically when the AI recognizes research intent:
+
+> "帮我调研东南亚电商物流"
+> "Research the current state of Germany's manufacturing digitalization"
+> "AWS和阿里云哪个更适合出海业务"
+> "Update my notes on Vietnam e-commerce with the latest developments"
+
+The skill infers everything from your description: how many subjects, whether to compare or do parallel research, which region and language to use, and where to save the output.
+
+You can also invoke it explicitly with `/deep-researcher`:
 
 ```
 /deep-researcher Southeast Asia e-commerce logistics
@@ -65,8 +74,6 @@ Just describe what you want in natural language — no flags or commands:
 /deep-researcher update my research on Vietnam e-commerce
 /deep-researcher save results to reports/japan-saas.md  Japan SaaS market
 ```
-
-The skill infers everything from your description: how many subjects, whether to compare or do parallel research, which region and language to use, and where to save the output.
 
 ## Search provider setup
 

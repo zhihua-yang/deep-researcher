@@ -21,7 +21,8 @@ description: |
   · Per-subject independence: each subject gets its own region and language,
     AWS searched in English, Alibaba Cloud searched in Chinese, no cross-contamination
 
-  Trigger: /deep-researcher [anything — describe what you want in natural language]
+  Trigger: Triggered automatically when user expresses research intent in natural language.
+  Also invokable explicitly with /deep-researcher [anything — describe what you want]
 allowed-tools:
   - WebSearch
   - Read
@@ -30,7 +31,8 @@ allowed-tools:
 ---
 
 # SKILL: Deep Researcher v1 — Domain Research Report Generator
-# Trigger: /deep-researcher [anything in natural language]
+# Trigger: Triggered automatically when user expresses research intent in natural language.
+#          Also invokable explicitly with /deep-researcher [anything in natural language]
 # No flags or options — everything is inferred from the query semantically.
 # Token budget: ~900
 
