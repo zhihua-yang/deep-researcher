@@ -1,28 +1,8 @@
 ---
 name: deep-researcher
 version: 1.0.0
-description: |
-  Deep Researcher — Domain Research Report Generator.
-
-  For any domain, runs multi-angle deep research and produces a structured report:
-  · Top 5 Consensus: core established facts, each tagged with evidence strength (HIGH/MEDIUM/LOW)
-  · Top 5 Divergences: contested questions with both sides' arguments side by side
-  · Key Numbers: critical metrics, every figure sourced, forecasts marked [ESTIMATED]
-  · Failed Paths: directions already proven unworkable, with reasons and recurrence conditions
-  · Core Tension: the irreducible contradiction at the heart of the domain, in one sentence
-  · Decision Readiness: what can be decided now vs. what needs more information, with confidence index 0-10
-
-  What makes it different:
-  · Anti-hallucination enforcement: full-text fetch before inference, vendor self-reported data auto-downgraded
-  · Local-language research: auto-detects domain region, searches primary sources in the official local language
-    (Greek for Greek labor law, Spanish for Panama Maritime Authority, Japanese for Japanese markets)
-  · Semantic intent routing: infers research mode, subjects, region, language, and output path from meaning —
-    no flags or options needed, just describe what you want
-  · Per-subject independence: each subject gets its own region and language,
-    AWS searched in English, Alibaba Cloud searched in Chinese, no cross-contamination
-
-  Trigger: Triggered automatically when user expresses research intent in natural language.
-  Also invokable explicitly with /deep-researcher [anything — describe what you want]
+description: Domain Research Report Generator — runs multi-angle deep research on any topic and produces a structured, decision-ready report with evidence-scored consensus, divergences, key numbers, failed paths, and decision readiness.
+author: zhihua-yang
 allowed-tools:
   - WebSearch
   - Read
@@ -460,3 +440,38 @@ After generating the output:
    - "Cancel" → abort, do not write
    - Only proceed if user explicitly confirms
 5. If file does not exist: create parent directories and write normally
+
+***
+
+## EXTERNAL ENDPOINTS
+
+This skill uses the following external services:
+
+| Service | URL | Data sent | Purpose |
+|---------|-----|-----------|---------|
+| Web search provider | Depends on configuration (e.g. api.serper.dev, api.tavily.com, api.search.brave.com) | Search query strings | Fetching search results for research |
+| Web pages | Any URL returned by search results | HTTP GET request only (no user data sent) | Full-text fetch for evidence verification |
+
+No user data beyond the research query is sent to any external service.
+The research query itself is sent to the configured search provider as a plain search string.
+
+***
+
+## SECURITY & PRIVACY
+
+- **What leaves your device**: The research topic/query (as a search string), and HTTP GET requests to web pages found in search results.
+- **What stays local**: All generated reports are saved to the local filesystem only. No report content is sent to any external service.
+- **API keys**: Search provider API keys are read from environment variables and sent only to the corresponding provider's API endpoint. They are never logged or included in output files.
+- **No telemetry**: This skill collects no usage data, analytics, or telemetry of any kind.
+
+***
+
+## TRUST STATEMENT
+
+When you use deep-researcher:
+
+1. Your research query is sent to the web search provider you configured (Serper, Tavily, Brave, Gemini, or similar).
+2. The skill fetches full text from web pages identified in search results — these are standard HTTP GET requests, no different from opening a page in a browser.
+3. All analysis, synthesis, and report generation happen locally within the AI agent's context.
+4. The final report is written to your local filesystem at the path you specify (or `context/[domain].md` by default).
+5. Nothing else leaves your machine.
