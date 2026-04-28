@@ -63,7 +63,7 @@ To fix this, install one of the following (pick any one):
 | **Tavily** (research-optimized) | Get key at tavily.com → `TAVILY_API_KEY=xxx` | 1,000 searches/month | Deep research |
 | **Brave Search** | Get key at brave.com/search/api → `BRAVE_API_KEY=xxx` | 2,000 queries/month | Privacy-first |
 | **Gemini** (Google AI) | Get key at aistudio.google.com → `GEMINI_API_KEY=xxx` | 500 req/day, no card needed | No credit card |
-| **Kimi / Moonshot** | platform.moonshot.cn → `KIMI_API_KEY=xxx` | Paid, but China-accessible | No VPN needed |
+| **Kimi / Moonshot** | platform.moonshot.cn → `KIMI_API_KEY=xxx` | Paid, Alipay accepted | Alternative provider |
 
 **After setting your API key, restart the gateway and try again.**
 
