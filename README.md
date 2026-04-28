@@ -1,6 +1,6 @@
 # deep-researcher
 
-**Domain Research Report Generator** — a skill for WorkBuddy and OpenClaw that turns any research topic into a structured, decision-ready report in minutes.
+**Domain Research Report Generator** — an AI agent skill that turns any research topic into a structured, decision-ready report in minutes.
 
 ## What it produces
 
@@ -38,32 +38,21 @@ For any domain, runs multi-angle deep research and outputs a structured `.md` re
 
 ## Installation
 
-### WorkBuddy
+Install as a skill in any compatible AI agent environment. Copy the skill files into your agent's skills directory, or use the pre-packaged zip:
 
-**Option A — ZIP install (recommended)**
+**Option A — ZIP install**
 
 1. Download [`deep-researcher-skill.zip`](deep-researcher-skill.zip)
-2. In WorkBuddy, go to **Skill Market → Add Skill → Upload Skill**
-3. Drop the zip file — done
+2. Import it through your agent platform's skill install UI
 
 **Option B — Manual**
 
 ```bash
-mkdir -p ~/.workbuddy/skills/deep-researcher
-# clone or download this repo, then:
-cp -R SKILL.md references/ strategies/ templates/ ~/.workbuddy/skills/deep-researcher/
+# Copy skill files into your agent's skills directory
+# (adjust path to match your platform)
+mkdir -p ~/.your-agent/skills/deep-researcher
+cp -R SKILL.md references/ strategies/ templates/ ~/.your-agent/skills/deep-researcher/
 ```
-
-### OpenClaw
-
-```bash
-mkdir -p ~/.openclaw/skills/deep-researcher
-cp -R SKILL.md references/ strategies/ templates/ ~/.openclaw/skills/deep-researcher/
-# restart gateway
-openclaw gateway restart
-```
-
-> **OpenClaw users**: deep-researcher requires a web search capability. OpenClaw's built-in `WebSearch` works if you have a provider configured (Gemini, Brave, Kimi, etc.). If not, see [Search provider setup](#search-provider-setup) below.
 
 ## Usage
 
@@ -81,7 +70,7 @@ The skill infers everything from your description: how many subjects, whether to
 
 ## Search provider setup
 
-deep-researcher needs a web search tool. In WorkBuddy this is built-in and works out of the box. In OpenClaw, configure one of:
+deep-researcher requires a web search tool. If your agent platform has a built-in web search tool, it works out of the box. Otherwise, configure one of the following search providers:
 
 | Provider | Recommended for | Free tier | Get key |
 |----------|----------------|-----------|---------|
@@ -93,10 +82,10 @@ deep-researcher needs a web search tool. In WorkBuddy this is built-in and works
 
 **Serper** is the recommended default — it returns real Google search results, which gives deep-researcher the best coverage for local-language searches across all regions.
 
+Set the API key as an environment variable and restart your agent:
+
 ```bash
-# Add to ~/.openclaw/.env  (replace with your provider of choice)
-echo 'SERPER_API_KEY=your_key_here' >> ~/.openclaw/.env
-openclaw gateway restart
+export SERPER_API_KEY=your_key_here
 ```
 
 ## File structure
@@ -111,20 +100,12 @@ deep-researcher/
 ├── templates/
 │   ├── decision-brief.md         # Output template for brief / brief-multi modes
 │   └── comparison.md             # Output template for compare / compare-multi modes
-└── deep-researcher-skill.zip     # Pre-packaged install for WorkBuddy
+└── deep-researcher-skill.zip     # Pre-packaged install zip
 ```
 
 ## Output languages
 
 The report is written in the same language as your query. Research is conducted in the domain's local language regardless of the output language — a Chinese-language query about Greek labor law will search in Greek but output in Chinese.
-
-## Compatibility
-
-| Platform | Status | Notes |
-|----------|--------|-------|
-| WorkBuddy | ✅ Full support | Built-in WebSearch, zero config |
-| OpenClaw | ✅ Full support | Requires search provider config |
-| Claude Code | ⚠️ Requires MCP | Configure Brave/Tavily MCP server first |
 
 ## License
 

@@ -43,7 +43,7 @@ Before doing anything else, verify that a web search capability is available.
 **Step 1 — Probe for a working search tool**
 Attempt a minimal test search (e.g. "deep researcher test") using whatever search tool is
 available in the current environment:
-- WorkBuddy / OpenClaw built-in: `WebSearch`
+- Built-in platform search: `WebSearch`
 - MCP search tools: `serper__search`, `tavily__search`, `brave_search`, `exa__search`,
   `web_search`, `search`, or any tool whose name contains "search"
 
@@ -55,7 +55,7 @@ Do NOT attempt to run the research. Instead, notify the user:
 ---
 ⚠️ **Deep Researcher needs a web search tool to function, but none was found in this environment.**
 
-To fix this, install one of the following (pick any one):
+To fix this, configure one of the following search providers (pick any one):
 
 | Option | Setup | Free tier | Best for |
 |--------|-------|-----------|---------|
@@ -65,10 +65,7 @@ To fix this, install one of the following (pick any one):
 | **Gemini** (Google AI) | Get key at aistudio.google.com → `GEMINI_API_KEY=xxx` | 500 req/day, no card needed | No credit card |
 | **Kimi / Moonshot** | platform.moonshot.cn → `KIMI_API_KEY=xxx` | Paid, Alipay accepted | Alternative provider |
 
-**After setting your API key, restart the gateway and try again.**
-
-For OpenClaw users, add the key to `~/.openclaw/.env` or set it as an environment variable,
-then run `openclaw gateway restart`.
+Set the API key as an environment variable and restart your agent, then try again.
 ---
 
 **Step 3 — WebFetch-only fallback**
